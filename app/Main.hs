@@ -1,6 +1,10 @@
 module Main where
 
-import Lib
+import           Data.Char                      ( toLower )
+import           Lib
 
 main :: IO ()
-main = someFunc
+main = do
+  word <- randomWord'
+  let puzzle = freshPuzzle (fmap toLower word)
+  runGame puzzle

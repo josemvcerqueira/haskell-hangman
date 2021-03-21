@@ -2,13 +2,14 @@ name:                hangman
 version:             0.1.0.0
 github:              "githubuser/hangman"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2021 Author name here"
+author:              "Jose Cerqueira"
+maintainer:          "jose@ilovemochi.com"
+copyright:           "2021 Jose Cerqueira"
 
 extra-source-files:
 - README.md
 - ChangeLog.md
+- data/dict.txt
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -21,6 +22,8 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- random == 1.1
+- split == 0.2.3.4
 
 library:
   source-dirs: src
@@ -33,6 +36,8 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -Wall
+    - -fwarn-tabs
     dependencies:
     - hangman
 
@@ -44,5 +49,7 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -Wall
+    - -fwarn-tabs
     dependencies:
     - hangman
